@@ -9,8 +9,84 @@ servers:
     description: Development server
   - url: https://localhost:8080/api
     description: Development server with TLS Profile
-paths: {}
+tags:
+  - name: runCalcForHedgeStrategy
+    description: Run calculations for headge strategy and generate proposals
+paths:
+  /runCalcForHedgeStrategy:
+    post:
+      tags:
+        - runCalcForHedgeStrategy
+      summary: Run calculations for headge strategy
+      description: Run calculations for headge strategy
+      operationId: runCalcForHedgeStrategy
+      requestBody:
+        $ref: '#/components/requestBodies/CalcEngineRequest'
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalcEngineResponse'
+        404:
+          description: Invalid data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalcEngineError'
 components:
+  requestBodies:
+    CalcEngineRequest:
+      description: A JSON object containing calc engine request information
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CalcEngineRequest'
+  schemas:
+    CalcEngineRequest:
+      type: object
+      properties:
+        orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Order'
+    CalcEngineResponse:
+      type: object
+      properties:
+        message:
+          type: string
+    CalcEngineError:
+      type: object
+      properties:
+        errMessage:
+          type: string
+    Order:
+      type: object
+      properties:
+        orderId:
+          type: integer
+          format: int64
+        side:
+          type: string
+        rank:
+          type: integer
+          format: int32
+        metric:
+          type: string
+        quantity:
+          type: number
+          format: double
+        allocQuantity:
+          type: number
+          format: double
+        marketValue:
+          type: number
+          format: double
+        ctDuration:
+          type: number
+          format: double
   responses:
     Problem:
       description: error occurred - see status code and problem object for more information.

@@ -124,7 +124,7 @@
     "eslint-webpack-plugin": "4.0.1",
     "folder-hash": "4.0.4",
     "fork-ts-checker-webpack-plugin": "9.0.2",
-    "generator-jhipster": "8.1.0",
+    "generator-jhipster": "^1.10.2",
     "html-webpack-plugin": "5.5.4",
     "husky": "8.0.3",
     "identity-obj-proxy": "3.0.0",

@@ -287,6 +287,11 @@
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>tech.tablesaw</groupId>
+            <artifactId>tablesaw-aggregate</artifactId>
+            <version>LATEST</version>
+        </dependency>
     </dependencies>
 
     <build>

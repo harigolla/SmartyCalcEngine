@@ -19,6 +19,7 @@ logging:
     tech.jhipster: DEBUG
     org.hibernate.SQL: DEBUG
     com.smarty.calcengine: DEBUG
+    com.smarty.calcengine.config: DEBUG
 
 spring:
   devtools:
@@ -73,7 +74,7 @@ jhipster:
   # CORS is only enabled by default with the "dev" profile
   cors:
     # Allow Ionic for JHipster by default (* no longer allowed in Spring Boot 2.4+)
-    allowed-origins: 'http://localhost:8100,https://localhost:8100,http://localhost:9000,https://localhost:9000,http://localhost:9060,https://localhost:9060'
+    allowed-origins: 'http://localhost:8100,https://localhost:8100,http://localhost:9000,https://localhost:9000,http://localhost:9060,https://localhost:9060,http://localhost:7742,https://localhost:7742'
     # Enable CORS when running in GitHub Codespaces
     allowed-origin-patterns: 'https://*.githubpreview.dev'
     allowed-methods: '*'
@@ -86,6 +87,7 @@ jhipster:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
         base64-secret: NzY1ZTI4YWEzMzM5YmZiZTQwYjk1NWIyZTc4Mjc1YjVlNDg4OGZmYTM4YTgxNjVkNmFiOTgxMjljMWYyZmQyMGY5OWNlYjQ1MjZiODkxNDkzYjcxMWYyZDljNTRkZmZhM2JhMWU4M2M4YmNiZmU0ZjIyMjQ0ZmM1MjYwMzk0YzM=
+        #EhFjfeSXw3370KkFqPlUdGEuVJez+b+Yw5WGN3ZhjdbDle7AgxTjAz6PFQI2IEno+HlT5K6j9YM7UZAPNTZHFQ==
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
